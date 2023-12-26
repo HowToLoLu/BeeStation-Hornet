@@ -154,7 +154,8 @@
 	return ..()
 
 /datum/antagonist/heretic/on_gain()
-	if(isipc(owner.current))//Due to IPCs having a mechanical heart it messes with the living heart, so no IPC heretics for now
+	var/obj/item/organ/heart/heart = owner.current.getorganslot(ORGAN_SLOT_HEART) //Now checking for a heart at all; thanks plasmamen.
+	if(!heart || !(heart.organ_flags & ORGAN_ORGANIC)) //Still no mechanical hearts please.
 		var/mob/living/carbon/C = owner.current	//only carbons have dna now, so we have to typecast
 		C.set_species(/datum/species/human)
 		var/prefs_name = C.client?.prefs?.read_character_preference(/datum/preference/name/backup_human)
