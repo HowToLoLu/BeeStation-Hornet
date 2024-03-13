@@ -97,7 +97,6 @@
 	var/slot_id	// The indentifier for the slot. It has nothing to do with ID cards.
 	var/icon_empty // Icon when empty. For now used only by humans.
 	var/icon_full  // Icon when contains an item. For now used only by humans.
-	var/list/object_overlays = list()
 	plane = HUD_PLANE
 
 /atom/movable/screen/inventory/Click(location, control, params)
@@ -122,6 +121,11 @@
 		usr.update_inv_hands()
 	return TRUE
 
+/atom/movable/screen/inventory/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
+	. = ..()
+	if(over != src)
+		cut_overlays()
+
 /atom/movable/screen/inventory/MouseEntered()
 	..()
 	add_overlays()
@@ -130,8 +134,7 @@
 
 /atom/movable/screen/inventory/MouseExited()
 	..()
-	cut_overlay(object_overlays)
-	object_overlays.Cut()
+	cut_overlays()
 	remove_stored_outline()
 
 /atom/movable/screen/inventory/proc/add_stored_outline()
@@ -168,7 +171,7 @@
 	if(!holding || user.get_item_by_slot(slot_id))
 		return
 
-	var/image/item_overlay = image(holding)
+	var/mutable_appearance/item_overlay = mutable_appearance(holding)
 	item_overlay.alpha = 92
 
 	if(!user.can_equip(holding, slot_id, TRUE, bypass_equip_delay_self = TRUE))
@@ -176,8 +179,7 @@
 	else
 		item_overlay.color = "#00ff00"
 
-	object_overlays += item_overlay
-	add_overlay(object_overlays)
+	add_overlay(item_overlay)
 
 /atom/movable/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
