@@ -106,10 +106,6 @@
 ///The sprite works fine for digitigrade legs as-is.
 #define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
 
-#define NOT_DIGITIGRADE				0
-#define FULL_DIGITIGRADE			1
-#define SQUISHED_DIGITIGRADE		2
-
 //! ## flags for covering body parts
 #define GLASSESCOVERSEYES	(1<<0)
 #define MASKCOVERSEYES		(1<<1)		//! get rid of some of the other stupidity in these flags
