@@ -5,9 +5,9 @@
 	bodyflag = FLAG_FLY
 	species_traits = list(NOEYESPRITES, NO_UNDERWEAR, TRAIT_BEEFRIEND)
 	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BUG)
-	mutanttongue = /obj/item/organ/tongue/fly
-	mutantliver = /obj/item/organ/liver/fly
-	mutantstomach = /obj/item/organ/stomach/fly
+	mutant_tongue = /obj/item/organ/tongue/fly
+	mutant_liver = /obj/item/organ/liver/fly
+	mutant_stomach = /obj/item/organ/stomach/fly
 	meat = /obj/item/food/meat/slab/human/mutant/fly
 	mutant_bodyparts = list("insect_type")
 	default_features = list("insect_type" = "fly", "body_size" = "Normal")

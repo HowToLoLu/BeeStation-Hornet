@@ -8,11 +8,11 @@
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_LIMBATTACHMENT,TRAIT_EASYDISMEMBER,TRAIT_POWERHUNGRY,TRAIT_XENO_IMMUNE, TRAIT_TOXIMMUNE)
 	inherent_biotypes = list(MOB_ROBOTIC, MOB_HUMANOID)
 	mutant_brain = /obj/item/organ/brain/positron
-	mutanteyes = /obj/item/organ/eyes/robotic
-	mutanttongue = /obj/item/organ/tongue/robot
-	mutantliver = /obj/item/organ/liver/cybernetic/upgraded/ipc
-	mutantstomach = /obj/item/organ/stomach/battery/ipc
-	mutantears = /obj/item/organ/ears/robot
+	mutant_eyes = /obj/item/organ/eyes/robotic
+	mutant_tongue = /obj/item/organ/tongue/robot
+	mutant_liver = /obj/item/organ/liver/cybernetic/upgraded/ipc
+	mutant_stomach = /obj/item/organ/stomach/battery/ipc
+	mutant_ears = /obj/item/organ/ears/robot
 	mutant_heart = /obj/item/organ/heart/cybernetic/ipc
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
 	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis")

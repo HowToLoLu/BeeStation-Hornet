@@ -14,10 +14,10 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/food/meat/slab/human/mutant/apid
-	mutanteyes = /obj/item/organ/eyes/apid
-	mutantlungs = /obj/item/organ/lungs/apid
-	mutantwings = /obj/item/organ/wings/bee
-	mutanttongue = /obj/item/organ/tongue/bee
+	mutant_eyes = /obj/item/organ/eyes/apid
+	mutant_lungs = /obj/item/organ/lungs/apid
+	mutant_wings = /obj/item/organ/wings/bee
+	mutant_tongue = /obj/item/organ/tongue/bee
 	burnmod = 1.5
 	toxmod = 1.5
 	staminamod = 1.25

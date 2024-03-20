@@ -8,10 +8,10 @@
 	species_traits = list(NOBLOOD,NOTRANSSTING,ENVIROSUIT)
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_NOHUNGER,TRAIT_ALWAYS_CLEAN)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
-	mutantlungs = /obj/item/organ/lungs/plasmaman
-	mutanttongue = /obj/item/organ/tongue/bone/plasmaman
-	mutantliver = /obj/item/organ/liver/plasmaman
-	mutantstomach = /obj/item/organ/stomach/plasmaman
+	mutant_lungs = /obj/item/organ/lungs/plasmaman
+	mutant_tongue = /obj/item/organ/tongue/bone/plasmaman
+	mutant_liver = /obj/item/organ/liver/plasmaman
+	mutant_stomach = /obj/item/organ/stomach/plasmaman
 	burnmod = 1.5
 	heatmod = 1.5
 	brutemod = 1.5

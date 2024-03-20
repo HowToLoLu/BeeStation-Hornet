@@ -410,25 +410,25 @@ GENE SCANNER
 		var/mutant = FALSE
 		if(H.dna.check_mutation(HULK))
 			mutant = TRUE
-		else if(S.mutantlungs != initial(S.mutantlungs))
+		else if(S.mutant_lungs != initial(S.mutant_lungs))
 			mutant = TRUE
 		else if(S.mutant_brain != initial(S.mutant_brain))
 			mutant = TRUE
 		else if(S.mutant_heart != initial(S.mutant_heart))
 			mutant = TRUE
-		else if(S.mutanteyes != initial(S.mutanteyes))
+		else if(S.mutant_eyes != initial(S.mutant_eyes))
 			mutant = TRUE
-		else if(S.mutantears != initial(S.mutantears))
+		else if(S.mutant_ears != initial(S.mutant_ears))
 			mutant = TRUE
 		else if(S.mutanthands != initial(S.mutanthands))
 			mutant = TRUE
-		else if(S.mutanttongue != initial(S.mutanttongue))
+		else if(S.mutant_tongue != initial(S.mutant_tongue))
 			mutant = TRUE
-		else if(S.mutanttail != initial(S.mutanttail))
+		else if(S.mutant_tail != initial(S.mutant_tail))
 			mutant = TRUE
-		else if(S.mutantliver != initial(S.mutantliver))
+		else if(S.mutant_liver != initial(S.mutant_liver))
 			mutant = TRUE
-		else if(S.mutantstomach != initial(S.mutantstomach))
+		else if(S.mutant_stomach != initial(S.mutant_stomach))
 			mutant = TRUE
 
 		message += "<span class='info'>Species: [S.name][mutant ? "-derived mutant" : ""]</span>"

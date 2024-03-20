@@ -172,8 +172,8 @@
 					return
 				if(!M.getorgan(/obj/item/organ/stomach) && !(NOSTOMACH in S.species_traits))
 					var/obj/item/organ/stomach/O
-					if(S.mutantstomach)
-						O = new S.mutantstomach()
+					if(S.mutant_stomach)
+						O = new S.mutant_stomach()
 					else
 						O = new()
 					O.Insert(M, drop_if_replaced = FALSE)
@@ -181,8 +181,8 @@
 					return
 				if(!M.getorgan(/obj/item/organ/lungs) && !(TRAIT_NOBREATH in S.inherent_traits))
 					var/obj/item/organ/lungs/O
-					if(S.mutantlungs)
-						O = new S.mutantlungs()
+					if(S.mutant_lungs)
+						O = new S.mutant_lungs()
 					else
 						O = new()
 					O.Insert(M, drop_if_replaced = FALSE)
@@ -195,16 +195,16 @@
 					return
 				if(!M.getorgan(/obj/item/organ/liver) && !(TRAIT_NOMETABOLISM in S.inherent_traits))
 					var/obj/item/organ/liver/O
-					if(S.mutantliver)
-						O = new S.mutantliver()
+					if(S.mutant_liver)
+						O = new S.mutant_liver()
 					else
 						O = new()
 					O.Insert(M, drop_if_replaced = FALSE)
 					M.adjustOrganLoss(ORGAN_SLOT_LIVER, 200)
 					return
 				if(!M.getorgan(/obj/item/organ/tail))
-					if(S.mutanttail)
-						var/obj/item/organ/tail/O = new S.mutanttail()
+					if(S.mutant_tail)
+						var/obj/item/organ/tail/O = new S.mutant_tail()
 						O.Insert(M, drop_if_replaced = FALSE)
 						M.adjustOrganLoss(ORGAN_SLOT_TAIL, 200)
 						M.visible_message("<span class='notice'>[M] sprouts a new tail!", "<span_class='userdanger'>You sprout a new tail!.</span>")
@@ -212,8 +212,8 @@
 						M.add_splatter_floor(get_turf(M))
 						return
 				if(!M.getorgan(/obj/item/organ/wings))
-					if(S.mutantwings)
-						var/obj/item/organ/wings/O = new S.mutantwings()
+					if(S.mutant_wings)
+						var/obj/item/organ/wings/O = new S.mutant_wings()
 						O.Insert(M, drop_if_replaced = FALSE)
 						M.adjustOrganLoss(ORGAN_SLOT_WINGS, 200)
 						M.visible_message("<span class='notice'>[M] sprouts a new pair of wings!", "<span_class='userdanger'>You sprout a new pair of wings!.</span>")

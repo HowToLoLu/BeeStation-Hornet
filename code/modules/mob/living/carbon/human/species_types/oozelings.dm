@@ -7,8 +7,8 @@
 	inherent_traits = list(TRAIT_TOXINLOVER,TRAIT_NOHAIRLOSS,TRAIT_NOFIRE,TRAIT_ALWAYS_CLEAN,TRAIT_EASYDISMEMBER)
 	hair_color = "mutcolor"
 	hair_alpha = 150
-	mutantlungs = /obj/item/organ/lungs/slime
-	mutanttongue = /obj/item/organ/tongue/slime
+	mutant_lungs = /obj/item/organ/lungs/slime
+	mutant_tongue = /obj/item/organ/tongue/slime
 	meat = /obj/item/food/meat/slab/human/mutant/slime
 	exotic_blood = /datum/reagent/toxin/slimejelly
 	damage_overlay_type = ""

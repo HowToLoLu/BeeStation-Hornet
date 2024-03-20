@@ -16,8 +16,8 @@
 	sexes = FALSE //snails are hermaphrodites
 	var/shell_type = /obj/item/storage/backpack/snail
 
-	mutanteyes = /obj/item/organ/eyes/snail
-	mutanttongue = /obj/item/organ/tongue/snail
+	mutant_eyes = /obj/item/organ/eyes/snail
+	mutant_tongue = /obj/item/organ/tongue/snail
 	exotic_blood = /datum/reagent/lube
 
 	species_chest = /obj/item/bodypart/chest/snail

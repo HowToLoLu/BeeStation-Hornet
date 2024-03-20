@@ -86,20 +86,20 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	var/sound/miss_sound = 'sound/weapons/punchmiss.ogg'
 
 	//Breathing!
-	var/obj/item/organ/lungs/mutantlungs = null
+	var/obj/item/organ/lungs/mutant_lungs = null
 	var/breathid = "o2"
 
 	var/obj/item/organ/brain/mutant_brain = /obj/item/organ/brain
 	var/obj/item/organ/heart/mutant_heart = /obj/item/organ/heart
-	var/obj/item/organ/eyes/mutanteyes = /obj/item/organ/eyes
-	var/obj/item/organ/ears/mutantears = /obj/item/organ/ears
+	var/obj/item/organ/eyes/mutant_eyes = /obj/item/organ/eyes
+	var/obj/item/organ/ears/mutant_ears = /obj/item/organ/ears
 	var/obj/item/mutanthands
-	var/obj/item/organ/tongue/mutanttongue = /obj/item/organ/tongue
-	var/obj/item/organ/tail/mutanttail = null
-	var/obj/item/organ/wings/mutantwings = null
+	var/obj/item/organ/tongue/mutant_tongue = /obj/item/organ/tongue
+	var/obj/item/organ/tail/mutant_tail = null
+	var/obj/item/organ/wings/mutant_wings = null
 
-	var/obj/item/organ/liver/mutantliver
-	var/obj/item/organ/stomach/mutantstomach
+	var/obj/item/organ/liver/mutant_liver
+	var/obj/item/organ/stomach/mutant_stomach
 	var/override_float = FALSE
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
@@ -247,8 +247,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	var/should_have_tongue = TRUE
 	var/should_have_liver = !(TRAIT_NOMETABOLISM in inherent_traits)
 	var/should_have_stomach = !(NOSTOMACH in species_traits)
-	var/should_have_tail = mutanttail
-	var/should_have_wings = mutantwings
+	var/should_have_tail = mutant_tail
+	var/should_have_wings = mutant_wings
 
 	if(heart && (!should_have_heart || replace_current))
 		heart.Remove(C,1)
@@ -261,8 +261,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		lungs.Remove(C,1)
 		QDEL_NULL(lungs)
 	if(should_have_lungs && !lungs)
-		if(mutantlungs)
-			lungs = new mutantlungs()
+		if(mutant_lungs)
+			lungs = new mutant_lungs()
 		else
 			lungs = new()
 		lungs.Insert(C)
@@ -271,8 +271,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		liver.Remove(C,1)
 		QDEL_NULL(liver)
 	if(should_have_liver && !liver)
-		if(mutantliver)
-			liver = new mutantliver()
+		if(mutant_liver)
+			liver = new mutant_liver()
 		else
 			liver = new()
 		liver.Insert(C)
@@ -281,8 +281,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		stomach.Remove(C,1)
 		QDEL_NULL(stomach)
 	if(should_have_stomach && !stomach)
-		if(mutantstomach)
-			stomach = new mutantstomach()
+		if(mutant_stomach)
+			stomach = new mutant_stomach()
 		else
 			stomach = new()
 		stomach.Insert(C)
@@ -298,7 +298,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		tail.Remove(C,1)
 		QDEL_NULL(tail)
 	if(should_have_tail && !tail)
-		tail = new mutanttail()
+		tail = new mutant_tail()
 		if(islizard(C))
 			var/obj/item/organ/tail/lizard/lizard_tail = tail
 			lizard_tail.tail_type = C.dna.features["tail_lizard"]
@@ -310,7 +310,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		wings.Remove(C,1)
 		QDEL_NULL(wings)
 	if(should_have_wings && !wings)
-		wings = new mutantwings()
+		wings = new mutant_wings()
 		if(ismoth(C))
 			wings.wing_type = C.dna.features["moth_wings"]
 			wings.flight_level = WINGS_FLIGHTLESS
@@ -331,21 +331,21 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			eyes.Remove(C,1)
 			QDEL_NULL(eyes)
 		if(should_have_eyes && !eyes)
-			eyes = new mutanteyes
+			eyes = new mutant_eyes
 			eyes.Insert(C)
 
 		if(ears && (replace_current || !should_have_ears))
 			ears.Remove(C,1)
 			QDEL_NULL(ears)
 		if(should_have_ears && !ears)
-			ears = new mutantears
+			ears = new mutant_ears
 			ears.Insert(C)
 
 		if(tongue && (replace_current || !should_have_tongue))
 			tongue.Remove(C,1)
 			QDEL_NULL(tongue)
 		if(should_have_tongue && !tongue)
-			tongue = new mutanttongue
+			tongue = new mutant_tongue
 			tongue.Insert(C)
 
 	if(old_species)
@@ -2472,9 +2472,9 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	var/list/food_flags = FOOD_FLAGS
 
 	return list(
-		"liked_food" = bitfield_to_list(initial(mutanttongue.liked_food), food_flags),
-		"disliked_food" = bitfield_to_list(initial(mutanttongue.disliked_food), food_flags),
-		"toxic_food" = bitfield_to_list(initial(mutanttongue.toxic_food), food_flags),
+		"liked_food" = bitfield_to_list(initial(mutant_tongue.liked_food), food_flags),
+		"disliked_food" = bitfield_to_list(initial(mutant_tongue.disliked_food), food_flags),
+		"toxic_food" = bitfield_to_list(initial(mutant_tongue.toxic_food), food_flags),
 	)
 
 /**

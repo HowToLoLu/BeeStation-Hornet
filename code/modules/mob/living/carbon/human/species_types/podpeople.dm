@@ -23,7 +23,7 @@
 	species_r_arm = /obj/item/bodypart/r_arm/pod
 	species_l_leg = /obj/item/bodypart/l_leg/pod
 	species_r_leg = /obj/item/bodypart/r_leg/pod
-	mutanttongue = /obj/item/organ/tongue/podperson
+	mutant_tongue = /obj/item/organ/tongue/podperson
 
 /datum/species/pod/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD)

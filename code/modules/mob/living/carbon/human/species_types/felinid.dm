@@ -9,9 +9,9 @@
 	default_features = list("mcolor" = "FFF", "wings" = "None", "body_size" = "Normal")
 	forced_features = list("tail_human" = "Cat", "ears" = "Cat")
 
-	mutantears = /obj/item/organ/ears/cat
-	mutanttail = /obj/item/organ/tail/cat
-	mutanttongue = /obj/item/organ/tongue/cat
+	mutant_ears = /obj/item/organ/ears/cat
+	mutant_tail = /obj/item/organ/tail/cat
+	mutant_tongue = /obj/item/organ/tongue/cat
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 
 	swimming_component = /datum/component/swimming/felinid
@@ -42,12 +42,12 @@
 			var/obj/item/organ/ears/cat/ears = new
 			ears.Insert(H, drop_if_replaced = FALSE, pref_load = pref_load)
 		else
-			mutantears = /obj/item/organ/ears
+			mutant_ears = /obj/item/organ/ears
 		if(H.dna.features["tail_human"] == "Cat")
 			var/obj/item/organ/tail/cat/tail = new
 			tail.Insert(H, drop_if_replaced = FALSE, pref_load = pref_load)
 		else
-			mutanttail = null
+			mutant_tail = null
 	return ..()
 
 /datum/species/human/felinid/on_species_loss(mob/living/carbon/H, datum/species/new_species, pref_load)
@@ -56,11 +56,11 @@
 
 	if(ears)
 		var/obj/item/organ/ears/new_ears
-		if(new_species?.mutantears)
-			// Roundstart cat ears override new_species.mutantears, reset it here.
-			new_species.mutantears = initial(new_species.mutantears)
-			if(new_species.mutantears)
-				new_ears = new new_species.mutantears
+		if(new_species?.mutant_ears)
+			// Roundstart cat ears override new_species.mutant_ears, reset it here.
+			new_species.mutant_ears = initial(new_species.mutant_ears)
+			if(new_species.mutant_ears)
+				new_ears = new new_species.mutant_ears
 		if(!new_ears)
 			// Go with default ears
 			new_ears = new /obj/item/organ/ears
@@ -68,11 +68,11 @@
 
 	if(tail)
 		var/obj/item/organ/tail/new_tail
-		if(new_species && new_species.mutanttail)
-			// Roundstart cat tail overrides new_species.mutanttail, reset it here.
-			new_species.mutanttail = initial(new_species.mutanttail)
-			if(new_species.mutanttail)
-				new_tail = new new_species.mutanttail
+		if(new_species && new_species.mutant_tail)
+			// Roundstart cat tail overrides new_species.mutant_tail, reset it here.
+			new_species.mutant_tail = initial(new_species.mutant_tail)
+			if(new_species.mutant_tail)
+				new_tail = new new_species.mutant_tail
 		if(new_tail)
 			new_tail.Insert(H, drop_if_replaced = FALSE, pref_load = pref_load)
 		else
